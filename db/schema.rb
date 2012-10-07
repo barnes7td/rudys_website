@@ -11,7 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121005034230) do
+ActiveRecord::Schema.define(:version => 20121007042927) do
+
+  create_table "about_infos", :force => true do |t|
+    t.text     "description"
+    t.integer  "image_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "contact_infos", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "address"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "display_fronts", :force => true do |t|
+    t.integer  "pattern_in"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "home_posts", :force => true do |t|
+    t.text     "post"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "home_posts", ["user_id"], :name => "index_home_posts_on_user_id"
 
   create_table "images", :force => true do |t|
     t.string   "image_url"
@@ -23,6 +56,30 @@ ActiveRecord::Schema.define(:version => 20121005034230) do
   end
 
   add_index "images", ["user_id"], :name => "index_images_on_user_id"
+
+  create_table "orders", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "pattern_id"
+    t.integer  "qty"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "pattern_posts", :force => true do |t|
+    t.integer  "customer_id"
+    t.integer  "pattern_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "patterns", :force => true do |t|
+    t.integer  "image_id"
+    t.string   "title"
+    t.text     "description"
+    t.float    "price"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

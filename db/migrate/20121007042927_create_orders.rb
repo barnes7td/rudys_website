@@ -1,9 +1,9 @@
 class CreateOrders < ActiveRecord::Migration
   def change
     create_table :orders do |t|
-      t.int :customer_id
-      t.int :pattern_id
-      t.int :qty
+      t.integer :customer_id
+      t.integer :pattern_id
+      t.integer :qty
 
       t.timestamps
     end
