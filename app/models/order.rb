@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :customer_id, :pattern_id, :qty
-  belongs_to :customer
-  has_one :pattern
+  attr_accessible :user_id, :pattern_id, :qty
+  belongs_to :user
+  belongs_to :pattern
 end

@@ -1,7 +1,7 @@
 class CreateHomePosts < ActiveRecord::Migration
   def change
     create_table :home_posts do |t|
-      t.text :post
+      t.text       :post
       t.references :user
 
       t.timestamps
