@@ -9,7 +9,11 @@ RudysWebsite::Application.routes.draw do
   get "/contact" => 'static_pages#contact'
 
   resources :users, :except => [:destroy, :create, :new, :edit, :update]
+
   resources :patterns
+
+  match "patterns/:title" => "pattern#show"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
