@@ -1,4 +1,16 @@
 RudysWebsite::Application.routes.draw do
+
+  get "patterns/index"
+
+  get "patterns/show"
+
+  root :to => 'static_pages#home'
+
+  get "/contact" => 'static_pages#contact'
+
+  resources :users, :except => [:destroy, :create, :new, :edit, :update]
+  resources :patterns
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

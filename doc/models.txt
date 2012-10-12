@@ -1,0 +1,41 @@
+User
+  name:         string
+  email:        string (ID)
+  password:     sting
+  admin:        boolean
+  avatar:       string
+
+Pattern
+  title:        string
+  description:  text
+  price:        float
+  image:        string
+
+PatternPost
+  pattern_id:   int (FK)
+  user_id:      int (FK)
+  image:        string 
+
+AboutInfo (singleton)
+  description:  text
+  image_id:     int (FK)
+
+ContactInfo (singleton)
+  name:         string
+  email:        string
+  phone:        string
+  address:      text
+
+HomePost
+  user_id:      int (FK)
+  post:         text
+
+Order
+  user_id:      int (FK)
+  pattern_id:   int (FK)
+  qty:          int
+
+HomeFront
+  pattern_id:   int (FK)
+  title:        string
+  description:  text

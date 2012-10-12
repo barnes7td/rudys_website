@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RudysWebsite</title>
+  <title>Rudy Lynn's Quilts</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
 </head>
 <body>
-
-<%= yield %>
-
+  <header>
+    <a><%=  image_tag "rudy_logo.png", :id => "logo" %></a>
+    <nav>
+      <li><a href="/">Home</a></li>
+      <li><%= link_to "Patterns", patterns_path %></li>
+      <li><a href="/contact">Contact</a></li>
+    </nav>
+  </header>
+  <%= yield %>
+  <footer id="recent_buys">
+    <h2>Other patterns you might like...</h2>
+    <div class="tease">
+      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
+    </div>
+    <div class="tease">
+      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
+    </div>
+    <div class="tease">
+      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
+    </div>
+    <div class="tease">
+      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
+    </div>
+    <div class="tease">
+      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
+    </div>
+    <div class="tease">
+      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
+    </div>
+  </footer>
 </body>
 </html>

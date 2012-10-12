@@ -1,0 +1,16 @@
+<div id= "patterns_area">
+  <div id="pattern_info">
+    <% @patterns.each do |pattern| %>
+      <div class="pattern">
+        <%= link_to image_tag("waste_not_want_not.jpg"), pattern_path(pattern) %>
+        <div class="pattern_title">
+          <h2><%= link_to "#{pattern.title}", pattern_path(pattern) %></h2>
+        </div>
+        <div class="pattern_description">
+          <p>This Carribean pattern is sure to make you feel like your on vaction. Sea sickness won't be the only thing you feel. </p>
+        </div>
+      </div>
+      <br>
+    <% end %>
+  </div>
+</div>
