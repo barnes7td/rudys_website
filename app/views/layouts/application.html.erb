@@ -21,24 +21,17 @@
   <%= yield %>
   <footer id="recent_buys">
     <h2>Other patterns you might like...</h2>
-    <div class="tease">
-      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
-    </div>
-    <div class="tease">
-      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
-    </div>
-    <div class="tease">
-      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
-    </div>
-    <div class="tease">
-      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
-    </div>
-    <div class="tease">
-      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
-    </div>
-    <div class="tease">
-      <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
-    </div>
+    <% @patterns.each do |pattern| %>
+      <div class="tease">
+        <%= link_to image_tag("waste_not_want_not.jpg"), pattern_path(pattern) %>
+        <span><%= pattern.title %></span>
+      </div>
+    <% end %>
+    <% (6 - @patterns.length).times do %>
+      <div class="tease">
+        <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
+      </div>
+    <% end %>
   </footer>
 </body>
 </html>
