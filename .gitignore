@@ -15,4 +15,4 @@
 /tmp
 
 # Mac log file
-.DS_store
+/.DS_store

@@ -23,7 +23,7 @@
     <h2>Other patterns you might like...</h2>
     <% @patterns.each do |pattern| %>
       <div class="tease">
-        <%= link_to image_tag("waste_not_want_not.jpg"), pattern_path(pattern.title.downcase) %>
+        <%= link_to image_tag("waste_not_want_not.jpg"), pattern_path(pattern.title) %>
         <span><%= "#{pattern.title} Pattern" %></span>
       </div>
     <% end %>
