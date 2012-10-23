@@ -6,7 +6,7 @@ RudysWebsite::Application.routes.draw do
 
   get "/contact" => 'static_pages#contact'
 
-  resources :users       #, :except => [:destroy, :create, :new, :edit, :update]
+  #resources :users       #, :except => [:destroy, :create, :new, :edit, :update]
 
   resources :patterns
 
