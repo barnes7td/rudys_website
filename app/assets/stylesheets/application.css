@@ -75,7 +75,7 @@ header li a {
 
 #recent_buys {
   width: 100%;
-  float: left;
+  /*float: left;*/
   margin-top: 25px;
   margin-left: 0px;
   background: #ABC217;
@@ -115,6 +115,7 @@ header li a {
 #middle {
  width: 1000px;
  min-height:450px;
+ height: auto;
 }
 
 #slideshow {
@@ -176,27 +177,3 @@ hr {
   line-height: 5px;
 }
 
-
-/* PATTERNS PAGE MAIN CONTENT */
-
-#patterns_area {
- width: 1000px;
- min-height:450px;
-}
-
-#pattern_info {
-  float: left;
-  height: 800px;
-  width: 640px;
-}
-
-.pattern {
-  width: 800px;
-  height: 160px;
-}
-
-.pattern img {
-  height: 160px;
-  float: left;
-  margin-right: 20px;
-}

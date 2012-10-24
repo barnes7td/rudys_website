@@ -1,5 +1,8 @@
 <div id= "patterns_area">
   <div id="pattern_info">
+    <% if current_user.try(:admin?) %>
+      <%= link_to "Create New Pattern", new_pattern_path %>
+    <% end %>
     <% @patterns.each do |pattern| %>
       <div class="pattern">
         <%= link_to image_tag("waste_not_want_not.jpg"), pattern_path(pattern.title) %>
@@ -9,6 +12,10 @@
         <div class="pattern_description">
           <p><%= pattern.description || "No description given." %></p>
         </div>
+        <% if current_user.try(:admin?) %>
+          <%= link_to "Edit", edit_pattern_path(pattern.id) %>
+          <%= link_to "Delete", pattern_path(pattern.id), :confirm => "are you sure?", :method => :delete %>
+        <% end %>
       </div>
       <br>
     <% end %>

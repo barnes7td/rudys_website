@@ -1,3 +1,29 @@
 // Place all the styles related to the Patterns controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* PATTERNS PAGE MAIN CONTENT */
+
+#patterns_area {
+ width: 1000px;
+ /* min-height: 450px; */
+ height: 2000;
+ /* margin: 0px auto -140px; */
+}
+
+#pattern_info {
+  float: left;
+  height: auto;
+  width: 640px;
+}
+
+.pattern {
+  width: 800px;
+  height: 160px;
+}
+
+.pattern img {
+  height: 160px;
+  float: left;
+  margin-right: 20px;
+}
