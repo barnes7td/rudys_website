@@ -8,6 +8,7 @@ RudysWebsite::Application.routes.draw do
 
   #resources :users       #, :except => [:destroy, :create, :new, :edit, :update]
 
+  resources :users
   resources :patterns
 
   match "patterns/:title" => "pattern#show"

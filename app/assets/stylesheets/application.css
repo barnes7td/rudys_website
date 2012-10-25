@@ -37,22 +37,36 @@ a:hover {
 /* NAVIGATION */
  
 header{
-  height: 100px;
+  height: 160px;
   width: 1000px;
   margin-bottom: 20px;
   float: left;
-  background: #ABC217;
+  /*background: #ABC217;*/
 }
 
 header #logo {
+  position: relative;
+  z-index: 1;
   height: 140px;
   width: 140px;
   float: left;
 }
 
+header .bar{
+  position: absolute;
+  top: 20;
+  height: 100px;
+  width: 1000px;
+  background: #ABC217;
+}
+
 header h1 {
   margin-left: 30px;
   font-weight: lighter;
+}
+
+header #username {
+  font-size: 14px
 }
 
 header li {
@@ -74,11 +88,14 @@ header li a {
 /* FOOTER */
 
 #recent_buys {
-  width: 100%;
-  /*float: left;*/
+  /*position: absolute;*/
+  bottom: 20px;
+  /*width: 100%;*/
+  float: left;
   margin-top: 25px;
   margin-left: 0px;
   background: #ABC217;
+  /*background: red;*/
   padding-left: 30px;
   width: 970px;
 }
@@ -105,7 +122,7 @@ header li a {
 
 #recent_buys p {
   color: black;
-  position: relative;
+  /*position: relative;*/
   font-size: 12px;
 }
 
