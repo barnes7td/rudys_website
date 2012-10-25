@@ -1,5 +1,7 @@
 RudysWebsite::Application.routes.draw do
 
+  get "/admin" => 'admin#index'
+
   devise_for :users
 
   root :to => 'static_pages#home'
