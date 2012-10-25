@@ -1,12 +1,16 @@
 RudysWebsite::Application.routes.draw do
 
   get "/admin" => 'admin#index'
+  get "/admin/posts" => 'admin#posts'
+  get "/admin/display" => 'admin#display'
+  get "/admin/orders" => 'admin#orders'
 
   devise_for :users
 
   root :to => 'static_pages#home'
 
   get "/contact" => 'static_pages#contact'
+  get "/contact/edit" => 'static_pages#contact_edit'
 
   #resources :users       #, :except => [:destroy, :create, :new, :edit, :update]
 
