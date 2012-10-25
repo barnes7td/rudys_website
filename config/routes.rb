@@ -1,5 +1,9 @@
 RudysWebsite::Application.routes.draw do
 
+  # get "contact_infos/show"
+  # get "contact_infos/edit"
+  put "/contact_infos/update" => 'contact_infos#update'
+
   get "/admin" => 'admin#index'
   get "/admin/posts" => 'admin#posts'
   get "/admin/display" => 'admin#display'
@@ -9,8 +13,8 @@ RudysWebsite::Application.routes.draw do
 
   root :to => 'static_pages#home'
 
-  get "/contact" => 'static_pages#contact'
-  get "/contact/edit" => 'static_pages#contact_edit'
+  get "/contact" => 'contact_infos#show'
+  get "/contact/edit" => 'contact_infos#edit'
 
   #resources :users       #, :except => [:destroy, :create, :new, :edit, :update]
 

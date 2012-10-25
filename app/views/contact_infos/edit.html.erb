@@ -1,0 +1,19 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<%= form_for @info, :url => { :action => "update" } do |f| %>
+
+    <p><%= f.label :name %></p>
+    <p><%= f.text_field :name %></p>
+
+    <p><%= f.label :address %></p>
+    <p><%= f.text_area :address %></p>
+
+    <p><%= f.label :phone %></p>
+    <p><%= f.text_field :phone %></p>
+
+    <p><%= f.label :email %></p>
+    <p><%= f.text_field :email %></p>
+
+  <%= f.submit "Update" %>
+<% end %>
