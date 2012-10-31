@@ -1,0 +1,10 @@
+<h1>Posts</h1><% @home_posts.each do |post| %>
+  <div class="posts">
+    <p><%= post.post %></p>
+    <p>
+      <%= link_to "Edit", edit_home_post_path(post.id) %>
+      <%= link_to "Delete", home_post_path(post.id), :confirm => "are you sure?", :method => :delete %>
+    </p>
+  </div>
+  <br>
+<% end %>

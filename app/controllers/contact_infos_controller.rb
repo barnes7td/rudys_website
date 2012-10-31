@@ -5,13 +5,12 @@ class ContactInfosController < ApplicationController
 
   def edit
     @info = ContactInfo.first
+    p @info
   end
 
   def update
     info = ContactInfo.find_by_name(params["contact_info"]["name"])
-    puts "####################"
-    puts info
-    puts "####################"
+    p info
     if info.update_attributes(params["contact_info"])
       flash[:notice] = "User successfully updated"
       redirect_to "/contact"

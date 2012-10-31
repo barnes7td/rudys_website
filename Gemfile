@@ -8,8 +8,13 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 gem 'carrierwave'
 gem 'devise'
+gem 'stamp'
 # gem 'stripe'
 
+group :development do
+  gem 'thin'
+  gem 'awesome_print', :platforms => :ruby
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
