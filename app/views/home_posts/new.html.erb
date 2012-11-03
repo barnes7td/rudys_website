@@ -1,0 +1,9 @@
+<%= form_for @post, :url => { :action => "create" } do |f| %>
+
+    <p><%= f.label :post %></p>
+    <p><%= f.text_area :post %></p>
+
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <%= f.submit "Update" %>
+<% end %>

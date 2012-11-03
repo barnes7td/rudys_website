@@ -8,10 +8,23 @@
         <p>Welcome to Rudy Lynn's Quilts. Please browse the patterns both modern and traditional. If you have and questions, please visit the Contact page.</p>
     </section>
     <section id="posts">
+      <% if current_user.try(:admin?) %>
+        <%= link_to "Create new Post", new_home_post_path %>
+      <% end %>
       <% @home_posts.each do |post| %>
       <div class="post">
         <span><%= post.post %></span>
-        <div class="timestamp"><%= post.created_at.stamp("March 1, 1999 at 3:00 AM") %></div>
+        <div>
+        <span class="timestamp">
+          <%= post.created_at.stamp("March 1, 1999") %>
+        </span>
+        <% if current_user.try(:admin?) %>
+        <span class="post-links">
+          <%= link_to "Edit", edit_home_post_path(post) %>
+          <%= link_to "Delete", home_post_path(post), :confirm => "are you sure?", :method => :delete %>
+        </span>
+        <% end %>
+        </div>
       </div>
       <br>
       <% end %>

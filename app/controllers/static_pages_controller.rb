@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @home_posts = HomePost.all order: "created_at DESC", limit: 4
+    @home_posts = HomePost.order("created_at DESC").last(4)
   end
 
 end

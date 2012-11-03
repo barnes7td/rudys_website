@@ -1,2 +1,10 @@
-<h1>Posts#edit,</h1>
-<p>Find me in app/views/posts/edit,.html.erb</p>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<%= form_for @post, :url => { :action => "update" } do |f| %>
+
+    <p><%= f.label :post %></p>
+    <p><%= f.text_area :post %></p>
+
+  <%= f.submit "Update" %>
+<% end %>
