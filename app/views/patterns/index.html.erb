@@ -5,7 +5,7 @@
     <% end %>
     <% @patterns.each do |pattern| %>
       <div class="pattern">
-        <%= link_to image_tag("waste_not_want_not.jpg"), pattern_path(pattern.title) %>
+        <%= link_to image_tag(pattern.image_url.to_s), pattern_path(pattern.title) %>
         <div class="pattern_title">
           <h2><%= link_to "#{pattern.title}", pattern_path(pattern.title) %></h2>
         </div>

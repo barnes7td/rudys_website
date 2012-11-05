@@ -3,6 +3,8 @@ class Pattern < ActiveRecord::Base
   has_many :pattern_posts
   has_many :orders
 
+  mount_uploader :image, PatternUploader
+
   #For no id, use friendly_id gem. Watch Railscast #314.
   def to_param
     title

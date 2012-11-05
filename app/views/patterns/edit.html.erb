@@ -1,5 +1,9 @@
-<%= form_for @pattern , :url => { action: "update" } do |f| %>
+<%= form_for @pattern, :html => {:multipart => true} do |f| %>
   
+  <%= image_tag(@pattern.image_url.to_s)  %>
+  <p><%= "Current File is: #{@pattern.image_url}" %></p>
+  <p><%= f.file_field :image %></p>
+
   <p><%= f.label :title %></p>
   <p><%= f.text_field :title %></p>
 

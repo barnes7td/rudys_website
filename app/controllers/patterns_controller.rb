@@ -23,7 +23,7 @@ class PatternsController < ApplicationController
   end
 
   def update
-    pattern = Pattern.find(params[:id])
+    pattern = Pattern.find_by_title(params[:id])
     if pattern.update_attributes(params[:pattern])
       flash[:notice] = "User successfully updated"
       redirect_to patterns_path

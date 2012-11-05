@@ -19,7 +19,7 @@
       <li><a href="/contact">Contact</a></li>
       <% if user_signed_in? %>
         <li>
-          <span id="username"><%= link_to current_user.email, "#{user_registration_path}/#{current_user.id}" %></span>
+          <span id="username"><%= link_to current_user.email, edit_user_registration_path %></span>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         </li>
       <% else %>
@@ -36,9 +36,9 @@
   <%= yield %>
   <footer id="recent_buys">
     <h2>Other patterns you might like...</h2>
-    <% @patterns.each do |pattern| %>
+    <% @footer.each do |pattern| %>
       <div class="tease">
-        <%= link_to image_tag("waste_not_want_not.jpg"), pattern %>
+        <%= link_to image_tag(pattern.image_url.to_s), pattern %>
         <span><%= "#{pattern.title} Pattern" %></span>
       </div>
     <% end %>
