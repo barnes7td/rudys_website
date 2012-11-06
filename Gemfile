@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'carrierwave'
 gem 'devise'
 gem 'stamp'
-# gem 'stripe'
+gem 'rmagick'
 
 group :development do
   gem 'thin'

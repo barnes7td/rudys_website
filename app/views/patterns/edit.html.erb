@@ -1,6 +1,6 @@
 <%= form_for @pattern, :html => {:multipart => true} do |f| %>
   
-  <%= image_tag(@pattern.image_url.to_s)  %>
+  <%= image_tag(@pattern.image_url(:full))  %>
   <p><%= "Current File is: #{@pattern.image_url}" %></p>
   <p><%= f.file_field :image %></p>
 

@@ -1,5 +1,5 @@
 <div class="pattern">
-  <%= image_tag "waste_not_want_not.jpg" %>
+  <%= image_tag @pattern.image_url(:full) if @pattern.image? %>
   <div class="pattern_title">
     <h2><%= "#{@pattern.title} Pattern" %></h2>
   </div>

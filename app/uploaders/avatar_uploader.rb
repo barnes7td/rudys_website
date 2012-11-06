@@ -1,9 +1,9 @@
 # encoding: utf-8
 
-class PatternUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  include CarrierWave::RMagick
+  # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
@@ -36,13 +36,9 @@ class PatternUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :full do
-    process :resize_to_limit => [400, 400]
-  end
-
-  version :thumb do
-    process :resize_to_limit => [100, 100]
-  end
+  # version :thumb do
+  #   process :scale => [50, 50]
+  # end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

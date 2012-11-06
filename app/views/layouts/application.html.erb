@@ -38,7 +38,7 @@
     <h2>Other patterns you might like...</h2>
     <% @footer.each do |pattern| %>
       <div class="tease">
-        <%= link_to image_tag(pattern.image_url.to_s), pattern %>
+        <%= link_to image_tag(pattern.image_url(:thumb)), pattern %>
         <span><%= "#{pattern.title} Pattern" %></span>
       </div>
     <% end %>
