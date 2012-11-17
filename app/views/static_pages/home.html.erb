@@ -1,6 +1,8 @@
 <div id= "middle">
   <section id="slideshow">
-    <a href="#"><%= image_tag "waste_not_want_not.jpg" %></a>
+    <a href="#"><%= link_to image_tag(@home_front.image_url(:full)), pattern_path(@home_front.title) %></a>
+    <p><%= @home_front.title %></p>
+    <p><%= @home_front.description %></p>
   </section>
   <div id="main_info">
     <section id="greeting">

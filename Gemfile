@@ -12,7 +12,8 @@ gem 'stamp'
 gem 'rmagick'
 
 group :development do
-  gem 'thin'
+  gem 'puma'
+  # gem 'thin'
   gem 'awesome_print', :platforms => :ruby
 end
 

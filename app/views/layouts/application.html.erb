@@ -5,11 +5,17 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
-
 </head>
 <body>
+  <script>
+    $document.ready(function(){
+      $("a").click(function(event){
+        alert("Tada!");
+        event.preventDefault();
+      });
+    });
+
+  </script>
   <header>
     <div class="bar"></div>
     <a><%=  image_tag "rudy_logo.png", :id => "logo" %></a>
@@ -19,7 +25,7 @@
       <li><a href="/contact">Contact</a></li>
       <% if user_signed_in? %>
         <li>
-          <span id="username"><%= link_to current_user.email, edit_user_registration_path %></span>
+          <span id="username">Signed in as: <%= link_to current_user.name, edit_user_registration_path %></span>
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         </li>
       <% else %>
@@ -33,6 +39,7 @@
   </header>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <a href="/">Home</a>
   <%= yield %>
   <footer id="recent_buys">
     <h2>Other patterns you might like...</h2>

@@ -37,7 +37,7 @@ class PatternUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :full do
-    process :resize_to_limit => [400, 400]
+    process :resize_to_limit => [200, 200]
   end
 
   version :thumb do
