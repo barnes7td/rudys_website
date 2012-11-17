@@ -7,15 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <script>
-    $document.ready(function(){
-      $("a").click(function(event){
-        alert("Tada!");
-        event.preventDefault();
-      });
-    });
-
-  </script>
   <header>
     <div class="bar"></div>
     <a><%=  image_tag "rudy_logo.png", :id => "logo" %></a>
@@ -39,7 +30,6 @@
   </header>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <a href="/">Home</a>
   <%= yield %>
   <footer id="recent_buys">
     <h2>Other patterns you might like...</h2>

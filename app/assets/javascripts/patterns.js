@@ -2,7 +2,11 @@
 // All this logic will automatically be available in application.js.
 // You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
-$(".pattern").click(function(event){
-  event.preventDefault();
-  $("div .pattern").addClass("pattern_large");
+$(document).ready(function(){
+  $("pattern_description")hide();
+
+  $(".pattern_title").click(function(event){
+    event.preventDefault();
+    $(this).sibling("pattern_description").toggle();
+  });
 });

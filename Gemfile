@@ -15,6 +15,7 @@ group :development do
   gem 'puma'
   # gem 'thin'
   gem 'awesome_print', :platforms => :ruby
+  gem 'railroady'
 end
 
 # Gems used only for assets and not required
