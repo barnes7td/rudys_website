@@ -5,4 +5,12 @@ class StaticPagesController < ApplicationController
     @home_front = Pattern.find HomeFront.first.pattern_id
   end
 
+  def destroy
+    @hp = HomePost.find(params[:id]).destroy
+    @hp_id = @hp.id
+    @hp.destroy
+
+    # respond_with(@hp_id, location: :root)
+  end
+
 end
