@@ -10,7 +10,7 @@ gem 'sqlite3'
 gem 'carrierwave'
 gem 'devise'
 gem 'stamp'
-gem 'rmagick'
+gem 'rmagick', :platforms => :ruby
 gem 'jquery-rails'
 
 group :development do
