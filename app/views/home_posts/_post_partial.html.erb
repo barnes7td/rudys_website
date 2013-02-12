@@ -1,0 +1,22 @@
+<section id="posts">
+      <% if current_user.try(:admin?) %>
+        <%= link_to "Create new Post", new_home_post_path %>
+      <% end %>
+      <% @home_posts.each do |post| %>
+      <div class="post" id="<%= "post-#{post.id}" %>">
+        <span><%= post.post %></span>
+        <div>
+        <span class="timestamp">
+          <%= post.created_at.stamp("March 1, 1999") %>
+        </span>
+        <% if current_user.try(:admin?) %>
+        <span class="post-links">
+          <%= link_to "Edit", edit_home_post_path(post) %>
+          <%= link_to "Delete", post, method: :delete, remote: true %>
+        </span>
+        <% end %>
+        </div>
+      </div>
+      <br>
+      <% end %>
+    </section>

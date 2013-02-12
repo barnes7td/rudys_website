@@ -1,0 +1,195 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+ /* COMMON ELEMENTS */
+
+/* VARIABLES*/
+
+$offwhite:   #F8FCDC;
+$tomato-red: #F04F0A;
+$green:      #ABC217;
+$rust:       #FAC905;
+
+/* BODY */
+
+body {
+  width:1000px;
+  margin-left: 50px;
+  margin-top: 20px;
+  font-family: Verdana;
+  background: $offwhite;
+}
+
+a {
+  text-decoration: none;
+  color: $green;
+
+  &:hover {
+    color: $tomato-red;
+  }
+
+}
+
+
+/* NAVIGATION */
+ 
+header{
+  height: 160px;
+  width: 1000px;
+  margin-bottom: 20px;
+  float: left;
+
+  #logo {
+    position: relative;
+    z-index: 1;
+    height: 140px;
+    width: 140px;
+    float: left;
+  }
+
+  .bar{
+    position: absolute;
+    top: 20;
+    height: 100px;
+    width: 1000px;
+    background: $green;
+  }
+
+  h1 {
+    margin-left: 30px;
+    font-weight: lighter;
+  }
+
+  #username {
+    font-size: 14px
+  }
+
+  li {
+    position: relative;
+    top: 60px;
+    list-style: none;
+    float: left;
+    margin-left: 30px;
+    font-size: 20px;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+
+
+
+/* FOOTER */
+
+#recent_buys {
+  bottom: 20px;
+  float: left;
+  margin-top: 25px;
+  margin-left: 0px;
+  background: $green;
+  padding-left: 30px;
+  width: 970px;
+
+  h2 {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: lighter;
+  }
+
+  .tease {
+    width: 150px;
+    height: 140px;
+    float: left;
+  }
+
+  img {
+    margin-left: 37px;
+    padding: 4px;
+    border: 3px dashed $offwhite;
+  }
+
+  p {
+    color: black;
+    font-size: 12px;
+  }
+}
+
+/* HOME PAGE MAIN CONTENT */
+
+#middle {
+ width: 1000px;
+ min-height:450px;
+ height: auto;
+}
+
+#slideshow {
+  float: left;
+  height: 430px;
+  width: 360px;
+  img {
+    margin: 30px;
+  }
+}
+
+#main_info {
+  float: left;
+  height: 430px;
+  width: 640px;
+
+  #greeting{
+    height: 140px;
+    width: 500px;
+    margin: 10px;
+    margin-top: 30px;
+  }
+
+  #posts{
+    margin: 10px;
+    width: 500px;
+  }
+
+  .post{
+    font-size: 14px;
+    color: #383835;
+    border: 1px dashed $rust;
+    padding: 5px;
+  }
+
+  .timestamp{
+    font-size: 10px;
+    color: $green;
+  }
+}
+
+hr {
+  border: 1px dashed $green;
+}
+
+
+/* CONTACT PAGE MAIN CONTENT */
+
+#head_shot {
+  height: 200px;
+  float: left;
+  margin-top: 50px;
+  margin-right: 20px;
+}
+
+#contact_info {
+  margin-top: 150px;
+  line-height: 5px;
+}
+

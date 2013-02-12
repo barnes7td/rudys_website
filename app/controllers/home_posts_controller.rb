@@ -1,6 +1,11 @@
 class HomePostsController < ApplicationController
+
   def index
     @home_posts = HomePost.all 
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   def show
@@ -32,7 +37,21 @@ class HomePostsController < ApplicationController
   end
 
   def destroy
-    HomePost.find(params[:id]).destroy
-    redirect_to :root
+    @hp = HomePost.find(params[:id])
+    @hp_id = @hp.id
+    @hp.destroy
+
+    @home_posts = HomePost.all
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def refresh
+    @home_posts = HomePost.all
+
+    respond_to do |format|
+      format.js
+    end
   end
 end

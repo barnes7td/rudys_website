@@ -6,9 +6,6 @@
 
 #patterns_area {
  width: 1000px;
- /* min-height: 450px; */
- // height: 2000;
- /* margin: 0px auto -140px; */
 }
 
 #pattern_info {
@@ -22,8 +19,19 @@
   height: 160px;
 }
 
+.pattern_large {
+  width: 800px;
+  height: 400px;
+}
+
 .pattern img {
   height: 160px;
+  float: left;
+  margin-right: 20px;
+}
+
+.pattern_large img{
+  height: 400px;
   float: left;
   margin-right: 20px;
 }
