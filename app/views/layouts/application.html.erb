@@ -1,44 +1,30 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Rudy Lynn's Quilts</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <header>
-    <div class="bar"></div>
-    <a><%=  image_tag "rudy_logo.png", :id => "logo" %></a>
-    <nav>
-      <li><a href="/">Home</a></li>
-      <li><%= link_to "Patterns", patterns_path %></li>
-      <li><a href="/contact">Contact</a></li>
-      <% if user_signed_in? %>
-        <li>
-          <span id="username">Signed in as: <%= link_to current_user.name, edit_user_registration_path %></span>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-        </li>
-      <% else %>
-        <li><%= link_to "Sign In", new_user_session_path %></li>
-        <li><%= link_to "Sign Up", new_user_registration_path %></li>
-      <% end %>
-      <% if current_user.try(:admin?) %>
-        <li><a href="/admin">Admin</a></li>
-      <% end %>
-    </nav>
-  </header>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
-  <footer id="recent_buys">
-    <h2>Other patterns you might like...</h2>
-    <% @footer.each do |pattern| %>
-      <div class="tease">
-        <%= link_to image_tag(pattern.image_url(:thumb)), pattern %>
-        <span><%= "#{pattern.title} Pattern" %></span>
-      </div>
-    <% end %>
-  </footer>
-</body>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+  	<meta charset="utf-8" />
+
+  	<!-- Uncomment to make IE8 render like IE7 -->
+  	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+  	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+  	<%= stylesheet_link_tag    "application" %>
+  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <%= yield %>
+
+    
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
